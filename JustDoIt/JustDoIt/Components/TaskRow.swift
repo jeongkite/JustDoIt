@@ -14,17 +14,15 @@ struct TaskRow: View {
     var body: some View {
         HStack(spacing: 20) {
             Image(systemName: isCompleted ? "checkmark.circle" : "circle")
-                .foregroundColor(.white)
+                .foregroundColor(isCompleted ? .gray : .accentColor)
             
             Text(taskTitle)
-                .foregroundColor(.white)
         }
-        .background(Color(uiColor: .background))
     }
 }
 
 struct TaskRow_Previews: PreviewProvider {
     static var previews: some View {
-        TaskRow(taskTitle: "일기쓰기", isCompleted: true)
+        TaskRow(taskTitle: "일기쓰기", isCompleted: false)
     }
 }

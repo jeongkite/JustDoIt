@@ -17,6 +17,13 @@ struct TasksView: View {
                 .foregroundColor(.white)
                 .padding()
                 .frame(maxWidth: .infinity, alignment: .leading)
+            
+            List {
+                ForEach(realmManager.tasks, id: \.id) { task in
+                    TaskRow(taskTitle: task.taskTitle, isCompleted: task.isCompleted)
+                }
+            }
+            .scrollContentBackground(.hidden)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(uiColor: .background))
