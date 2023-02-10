@@ -19,23 +19,45 @@ struct TasksView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
             
             List {
-                ForEach(realmManager.tasks, id: \.id) { task in
-                    if !task.isInvalidated {
-                        TaskRow(taskTitle: task.taskTitle, isCompleted: task.isCompleted)
-                            .onTapGesture {
-                                realmManager.updateStateOfTask(id: task.id, isCompleted: !task.isCompleted)
-                            }
-                            .swipeActions(edge: .trailing) {
-                                Button(role: .destructive) {
-                                    realmManager.deleteTask(id: task.id)
-                                } label: {
-                                    Label("삭제", systemImage: "trash")
+                if realmManager.tasks.isEmpty {
+                    VStack {
+                        Spacer()
+                        Text("앗, 아직 할 일이 없어요!")
+                            .bold()
+                        Spacer()
+                        Text("버튼을 눌러 새로운 할 일을 추가해보세요")
+                            .font(.caption)
+                            .foregroundColor(Color.gray)
+                            .listRowSeparator(.hidden)
+                        Spacer()
+                    }
+                    .padding(.vertical)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                } else {
+                    ForEach(realmManager.tasks, id: \.id) { task in
+                        if !task.isInvalidated {
+                            TaskRow(taskTitle: task.taskTitle, isCompleted: task.isCompleted)
+                                .onTapGesture {
+                                    realmManager.updateStateOfTask(id: task.id, isCompleted: !task.isCompleted)
                                 }
-                            }
+                                .swipeActions(edge: .trailing) {
+                                    Button(role: .destructive) {
+                                        realmManager.deleteTask(id: task.id)
+                                    } label: {
+                                        Label("삭제", systemImage: "trash")
+                                    }
+                                    Button() {
+                                        realmManager.deleteTask(id: task.id)
+                                    } label: {
+                                        Label("수정", systemImage: "pencil")
+                                    }
+                                }
+                        }
                     }
                 }
             }
             .scrollContentBackground(.hidden)
+            .padding(.top, -35)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(uiColor: .background))
