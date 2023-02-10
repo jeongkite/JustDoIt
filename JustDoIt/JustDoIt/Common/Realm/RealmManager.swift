@@ -26,4 +26,19 @@ class RealmManager: ObservableObject {
             print("Error - Opening Realm : \(error)")
         }
     }
+    
+    func addTask(taskTitle: String) {
+        if let localRealm = localRealm {
+            do {
+                try localRealm.write {
+                    let newTask = Task(value: ["taskTitle": taskTitle, "isCompleted": false])
+                    localRealm.add(newTask)
+                    getTasks()
+                    print("Succeed - Add New Task : \(newTask)")
+                }
+            } catch {
+                print("Error - Add New Task : \(error)")
+            }
+        }
+    }
 }
