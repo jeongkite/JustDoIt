@@ -54,4 +54,22 @@ class RealmManager: ObservableObject {
             }
         }
     }
+    
+    func updateStateOfTask(id: ObjectId, isCompleted: Bool) {
+        if let localRealm = localRealm {
+            do {
+                let taskToUpdate = localRealm.objects(Task.self).filter(NSPredicate(format: "id == %@", id))
+                guard !taskToUpdate.isEmpty else { return }
+                
+                try localRealm.write {
+                    taskToUpdate[0].isCompleted = isCompleted
+                    getTasks()
+                    print("Succeed - Update State of Task(id: \(id)) to \(isCompleted)")
+                }
+            } catch {
+                print("Error - Update Task(id: \(id)) to Realm : \(error)")
+            }
+        }
+    }
+
 }
