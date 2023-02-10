@@ -21,6 +21,9 @@ struct TasksView: View {
             List {
                 ForEach(realmManager.tasks, id: \.id) { task in
                     TaskRow(taskTitle: task.taskTitle, isCompleted: task.isCompleted)
+                        .onTapGesture {
+                            realmManager.updateStateOfTask(id: task.id, isCompleted: !task.isCompleted)
+                        }
                 }
             }
             .scrollContentBackground(.hidden)
