@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AddTaskView: View {
-    @State private var taskName: String = ""
+    @State private var taskTitle: String = ""
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -18,7 +18,7 @@ struct AddTaskView: View {
                 .font(.title).bold()
                 .frame(maxWidth: .infinity, alignment: .leading)
             HStack {
-                TextField("", text: $taskName, prompt: Text("여기에 해야 할 일을 적어주세요").foregroundColor(.gray))
+                TextField("", text: $taskTitle, prompt: Text("여기에 해야 할 일을 적어주세요").foregroundColor(.gray))
                     .foregroundColor(.white)
                     .background(Color.black)
             }

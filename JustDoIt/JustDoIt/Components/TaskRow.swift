@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TaskRow: View {
-    var task: String
+    var taskTitle: String
     var isCompleted: Bool
     
     var body: some View {
@@ -16,7 +16,7 @@ struct TaskRow: View {
             Image(systemName: isCompleted ? "checkmark.circle" : "circle")
                 .foregroundColor(.white)
             
-            Text(task)
+            Text(taskTitle)
                 .foregroundColor(.white)
         }
         .background(Color(uiColor: .background))
@@ -25,6 +25,6 @@ struct TaskRow: View {
 
 struct TaskRow_Previews: PreviewProvider {
     static var previews: some View {
-        TaskRow(task: "일기쓰기", isCompleted: true)
+        TaskRow(taskTitle: "일기쓰기", isCompleted: true)
     }
 }
