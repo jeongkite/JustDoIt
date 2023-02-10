@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TasksView: View {
     @EnvironmentObject var realmManager: RealmManager
+    @State private var isShowAddTaskView: Bool = false
     
     var body: some View {
         VStack {
@@ -47,7 +48,7 @@ struct TasksView: View {
                                         Label("삭제", systemImage: "trash")
                                     }
                                     Button() {
-                                        realmManager.deleteTask(id: task.id)
+                                        isShowAddTaskView.toggle()
                                     } label: {
                                         Label("수정", systemImage: "pencil")
                                     }
@@ -58,6 +59,10 @@ struct TasksView: View {
             }
             .scrollContentBackground(.hidden)
             .padding(.top, -35)
+        }
+        .sheet(isPresented: $isShowAddTaskView) {
+            AddTaskView(viewType: .edit)
+                .environmentObject(realmManager)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(uiColor: .background))

@@ -23,7 +23,7 @@ struct ContentView: View {
                 }
         }
         .sheet(isPresented: $isShowAddTaskView) {
-            AddTaskView()
+            AddTaskView(viewType: .new)
                 .environmentObject(realmManager)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)

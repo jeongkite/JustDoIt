@@ -7,17 +7,23 @@
 
 import SwiftUI
 
+enum AddTaskViewType: String {
+    case new
+    case edit
+}
+
 struct AddTaskView: View {
     @EnvironmentObject var realmManager: RealmManager
     @State private var taskTitle: String = ""
     @Environment(\.dismiss) var dismiss
+    var viewType: AddTaskViewType
     
     var body: some View {
         Color(uiColor: .background)
             .ignoresSafeArea()
             .overlay(
                 VStack(alignment: .center, spacing: 20) {
-                    Text("할 일 추가하기")
+                    Text(viewType == .new ? "할 일 추가하기" : "할 일 수정하기")
                         .foregroundColor(.white)
                         .font(.title).bold()
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -39,7 +45,7 @@ struct AddTaskView: View {
                         }
                         dismiss()
                     } label: {
-                        Text("추가하기")
+                        Text(viewType == .new ? "추가하기" : "수정하기")
                             .foregroundColor(.white)
                             .font(.headline).bold()
                             .padding()
@@ -56,7 +62,7 @@ struct AddTaskView: View {
 
 struct AddTaskView_Previews: PreviewProvider {
     static var previews: some View {
-        AddTaskView()
+        AddTaskView(viewType: .new)
             .environmentObject(RealmManager())
     }
 }
