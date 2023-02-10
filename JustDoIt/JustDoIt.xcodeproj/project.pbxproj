@@ -11,6 +11,10 @@
 		DD003D5A29951F61000A68AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD003D5929951F61000A68AB /* ContentView.swift */; };
 		DD003D5C29951F62000A68AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD003D5B29951F62000A68AB /* Assets.xcassets */; };
 		DD003D5F29951F62000A68AB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD003D5E29951F62000A68AB /* Preview Assets.xcassets */; };
+		DDA418472996136E000F9572 /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA418462996136E000F9572 /* TasksView.swift */; };
+		DDA4184B299614DE000F9572 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA4184A299614DE000F9572 /* Color.swift */; };
+		DDA4184E29961635000F9572 /* TaskRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA4184D29961635000F9572 /* TaskRow.swift */; };
+		DDA4185029961969000F9572 /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA4184F29961969000F9572 /* AddTaskView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		DD003D5929951F61000A68AB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DD003D5B29951F62000A68AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD003D5E29951F62000A68AB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DDA418462996136E000F9572 /* TasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
+		DDA4184A299614DE000F9572 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		DDA4184D29961635000F9572 /* TaskRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRow.swift; sourceTree = "<group>"; };
+		DDA4184F29961969000F9572 /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +59,10 @@
 		DD003D5629951F61000A68AB /* JustDoIt */ = {
 			isa = PBXGroup;
 			children = (
+				DDA41849299614CC000F9572 /* Common */,
+				DDA4184C29961617000F9572 /* Components */,
+				DDA418482996137A000F9572 /* Views */,
 				DD003D5729951F61000A68AB /* JustDoItApp.swift */,
-				DD003D5929951F61000A68AB /* ContentView.swift */,
 				DD003D5B29951F62000A68AB /* Assets.xcassets */,
 				DD003D5D29951F62000A68AB /* Preview Content */,
 			);
@@ -65,6 +75,32 @@
 				DD003D5E29951F62000A68AB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DDA418482996137A000F9572 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DD003D5929951F61000A68AB /* ContentView.swift */,
+				DDA418462996136E000F9572 /* TasksView.swift */,
+				DDA4184F29961969000F9572 /* AddTaskView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DDA41849299614CC000F9572 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				DDA4184A299614DE000F9572 /* Color.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		DDA4184C29961617000F9572 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				DDA4184D29961635000F9572 /* TaskRow.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +173,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDA4184E29961635000F9572 /* TaskRow.swift in Sources */,
 				DD003D5A29951F61000A68AB /* ContentView.swift in Sources */,
+				DDA4184B299614DE000F9572 /* Color.swift in Sources */,
+				DDA4185029961969000F9572 /* AddTaskView.swift in Sources */,
+				DDA418472996136E000F9572 /* TasksView.swift in Sources */,
 				DD003D5829951F61000A68AB /* JustDoItApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
