@@ -31,7 +31,9 @@ struct AddTaskView: View {
             Spacer()
             
             Button {
-                print("할 일 추가!")
+                if !taskTitle.isEmpty {
+                    realmManager.addTask(taskTitle: taskTitle)
+                }
                 dismiss()
             } label: {
                 Text("추가하기")
