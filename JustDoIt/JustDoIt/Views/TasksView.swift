@@ -24,6 +24,12 @@ struct TasksView: View {
                         .onTapGesture {
                             realmManager.updateStateOfTask(id: task.id, isCompleted: !task.isCompleted)
                         }
+                        .swipeActions(edge: .trailing) {
+                            Button(role: .destructive) {
+                                realmManager.deleteTask(id: task.id)
+                            } label: {
+                                Label("삭제", systemImage: "trash")
+                            }
                 }
             }
             .scrollContentBackground(.hidden)
