@@ -13,7 +13,7 @@ struct MainAddButton: View {
             Circle()
                 .frame(width: 50)
                 .foregroundColor(Color.accentColor)
-            Image(systemName: "pencil")
+            Image(systemName: "plus")
                 .resizable()
                 .foregroundColor(.white)
                 .scaledToFit()
