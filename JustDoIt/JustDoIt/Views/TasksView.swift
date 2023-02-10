@@ -20,16 +20,19 @@ struct TasksView: View {
             
             List {
                 ForEach(realmManager.tasks, id: \.id) { task in
-                    TaskRow(taskTitle: task.taskTitle, isCompleted: task.isCompleted)
-                        .onTapGesture {
-                            realmManager.updateStateOfTask(id: task.id, isCompleted: !task.isCompleted)
-                        }
-                        .swipeActions(edge: .trailing) {
-                            Button(role: .destructive) {
-                                realmManager.deleteTask(id: task.id)
-                            } label: {
-                                Label("삭제", systemImage: "trash")
+                    if !task.isInvalidated {
+                        TaskRow(taskTitle: task.taskTitle, isCompleted: task.isCompleted)
+                            .onTapGesture {
+                                realmManager.updateStateOfTask(id: task.id, isCompleted: !task.isCompleted)
                             }
+                            .swipeActions(edge: .trailing) {
+                                Button(role: .destructive) {
+                                    realmManager.deleteTask(id: task.id)
+                                } label: {
+                                    Label("삭제", systemImage: "trash")
+                                }
+                            }
+                    }
                 }
             }
             .scrollContentBackground(.hidden)
