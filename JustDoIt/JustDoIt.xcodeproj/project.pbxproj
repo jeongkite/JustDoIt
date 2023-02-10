@@ -18,6 +18,8 @@
 		DDA41854299621EC000F9572 /* MainAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA41853299621EC000F9572 /* MainAddButton.swift */; };
 		DDA4185729962937000F9572 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = DDA4185629962937000F9572 /* Realm */; };
 		DDA4185929962937000F9572 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DDA4185829962937000F9572 /* RealmSwift */; };
+		DDA4185B29962AAD000F9572 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA4185A29962AAD000F9572 /* RealmManager.swift */; };
+		DDA4185D29962C1C000F9572 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA4185C29962C1C000F9572 /* Task.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		DDA4184D29961635000F9572 /* TaskRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRow.swift; sourceTree = "<group>"; };
 		DDA4184F29961969000F9572 /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
 		DDA41853299621EC000F9572 /* MainAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAddButton.swift; sourceTree = "<group>"; };
+		DDA4185A29962AAD000F9572 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		DDA4185C29962C1C000F9572 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				DDA4184A299614DE000F9572 /* Color.swift */,
+				DDA4185E29962C29000F9572 /* Realm */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -108,6 +113,15 @@
 				DDA41853299621EC000F9572 /* MainAddButton.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		DDA4185E29962C29000F9572 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				DDA4185A29962AAD000F9572 /* RealmManager.swift */,
+				DDA4185C29962C1C000F9572 /* Task.swift */,
+			);
+			path = Realm;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,11 +202,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDA4184E29961635000F9572 /* TaskRow.swift in Sources */,
+				DDA4185B29962AAD000F9572 /* RealmManager.swift in Sources */,
 				DDA41854299621EC000F9572 /* MainAddButton.swift in Sources */,
 				DD003D5A29951F61000A68AB /* ContentView.swift in Sources */,
 				DDA4184B299614DE000F9572 /* Color.swift in Sources */,
 				DDA4185029961969000F9572 /* AddTaskView.swift in Sources */,
 				DDA418472996136E000F9572 /* TasksView.swift in Sources */,
+				DDA4185D29962C1C000F9572 /* Task.swift in Sources */,
 				DD003D5829951F61000A68AB /* JustDoItApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
