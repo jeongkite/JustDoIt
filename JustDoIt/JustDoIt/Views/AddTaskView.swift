@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AddTaskView: View {
     @State private var taskName: String = ""
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         VStack(alignment: .center, spacing: 20) {
@@ -29,7 +30,8 @@ struct AddTaskView: View {
             Spacer()
             
             Button {
-                print("Create Button Did Tap!")
+                print("할 일 추가!")
+                dismiss()
             } label: {
                 Text("추가하기")
                     .foregroundColor(.white)
