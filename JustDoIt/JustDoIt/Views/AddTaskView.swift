@@ -11,7 +11,7 @@ struct AddTaskView: View {
     @State private var taskName: String = ""
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 20) {
+        VStack(alignment: .center, spacing: 20) {
             Text("할 일 추가하기")
                 .foregroundColor(.white)
                 .font(.title).bold()
@@ -25,6 +25,8 @@ struct AddTaskView: View {
             .padding(.vertical, 10)
             .background(Color.black)
             .cornerRadius(10)
+            
+            Spacer()
             
             Button {
                 print("Create Button Did Tap!")
